@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vloam 官方下载中心 | Vloam Release Hub</title>
+  <meta name="description" content="Vloam 官方软件发布与下载中心，提供 VloamClip、VloamDB 等全套跨平台桌面端应用的最新版本与高速直链下载。">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230f172a'/><path d='M30 70 L50 25 L70 70 Z' fill='%2338bdf8'/></svg>">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: rgba(22, 29, 47, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-border-hover: rgba(56, 189, 248, 0.35);
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --primary: #38bdf8;
+      --primary-hover: #0284c7;
+      --primary-glow: rgba(56, 189, 248, 0.15);
+      --accent: #818cf8;
+      --badge-bg: rgba(56, 189, 248, 0.12);
+      --badge-text: #38bdf8;
+      --code-bg: #0f172a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Ambient background glows */
+    body::before, body::after {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      filter: blur(140px);
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.35;
+    }
+    body::before {
+      top: -150px;
+      left: 10%;
+      background: radial-gradient(circle, #0284c7, transparent 70%);
+    }
+    body::after {
+      top: 250px;
+      right: 5%;
+      background: radial-gradient(circle, #6366f1, transparent 70%);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header */
+    header {
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(9, 13, 22, 0.75);
+    }
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+    }
+    .brand-logo {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 20px;
+      box-shadow: 0 4px 16px rgba(56, 189, 248, 0.3);
+    }
+    .brand-title {
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .brand-tag {
+      font-size: 11px;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 2px 8px;
+      border-radius: 12px;
+      color: var(--text-muted);
+      margin-left: 4px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-link:hover {
+      color: #fff;
+    }
+    .nav-btn {
+      padding: 6px 14px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 72px 0 48px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--badge-bg);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: var(--badge-text);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .hero-badge .pulse {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #38bdf8;
+      box-shadow: 0 0 10px #38bdf8;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+    .hero h1 {
+      font-size: 44px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+      background: linear-gradient(180deg, #ffffff 30%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 17px;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    /* Product Grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      gap: 28px;
+      margin: 36px 0 64px;
+    }
+    @media (max-width: 640px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 32px;
+      }
+    }
+
+    .product-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 32px;
+      backdrop-filter: blur(16px);
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+    }
+    .product-card:hover {
+      border-color: var(--card-border-hover);
+      box-shadow: 0 16px 40px rgba(56, 189, 248, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+    .product-info {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .product-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    }
+    .icon-clip {
+      background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+    }
+    .icon-db {
+      background: linear-gradient(135deg, #6366f1, #a855f7);
+    }
+    .product-titles h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .version-tag {
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: 6px;
+      background: rgba(56, 189, 248, 0.12);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      font-weight: 600;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    .tagline {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .product-desc {
+      color: #cbd5e1;
+      font-size: 14px;
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+
+    /* Features List */
+    .features-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+    .feature-chip {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Download Buttons */
+    .actions-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .btn-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: #0284c7;
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+    }
+    .btn-primary:hover {
+      background: #0369a1;
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.5);
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px dashed rgba(255, 255, 255, 0.12);
+      font-size: 12px;
+      padding: 6px 12px;
+    }
+    .btn-ghost:hover {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Changelog drawer */
+    .changelog-box {
+      margin-top: 14px;
+      padding: 14px;
+      background: var(--code-bg);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      font-size: 12px;
+      color: #94a3b8;
+      max-height: 140px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      line-height: 1.6;
+      display: none;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: auto;
+      padding: 32px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 12px;
+    }
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="https://dl.vloam.com" class="brand">
+        <div class="brand-logo">V</div>
+        <span class="brand-title">Vloam</span>
+        <span class="brand-tag">Download Hub</span>
+      </a>
+      <div class="nav-links">
+        <a href="https://clip.vloam.com" class="nav-link" target="_blank">VloamClip 官网</a>
+        <a href="https://db.vloam.com" class="nav-link" target="_blank">VloamDB 官网</a>
+        <a href="https://github.com/wuqiyin/releases" class="nav-btn nav-link" target="_blank">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub 归档
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">
+        <span class="pulse"></span>
+        官方极速直链 · 持续自动构建
+      </div>
+      <h1>Vloam 官方软件发布中心</h1>
+      <p>为程序员、独立开发者与效率探索者打造的现代化跨平台桌面应用矩阵。</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+    <div class="products-grid">
+
+      <!-- Card 1: VloamClip -->
+      <div class="product-card" id="card-clip">
+        <div>
+          <div class="card-header">
+            <div class="product-info">
+              <div class="product-icon icon-clip">📋</div>
+              <div class="product-titles">
+                <h2>VloamClip <span class="version-tag" id="clip-ver">v1.1.8</span></h2>
+                <div class="tagline">手不离键盘的极速剪贴板利器</div>
+              </div>
+            </div>
+          </div>
+          <p class="product-desc">
+            拒绝鼠标频繁打断！支持全键盘流漫游、Vim 级浏览、FIFO/LIFO 连续粘贴队列与本地纯净 AES-256 安全加密，守护击键心流。
+          </p>
+          <div class="features-list">
+            <span class="feature-chip">⚡️ 全键盘 Vim 漫游</span>
+            <span class="feature-chip">📥 连续队列粘贴</span>
+            <span class="feature-chip">🔒 本地优先隐私</span>
+            <span class="feature-chip">🪶 Go + Wails 轻量级</span>
+          </div>
+        </div>
+
+        <div class="actions-group">
+          <div class="btn-row">
+            <a href="https://ghfast.top/https://github.com/wuqiyin/releases/releases/download/clip-v1.1.8/VloamClip-1.1.8.dmg" class="btn btn-primary" id="clip-mac-btn">
+              🍏 macOS 下载 (.dmg)
+            </a>
+            <a href="https://ghfast.top/https://github.com/wuqiyin/releases/releases/download/clip-v1.1.8/VloamClip-1.1.8-amd64-installer.exe" class="btn btn-secondary" id="clip-win-btn">
+              🪟 Windows (.exe)
+            </a>
+          </div>
+          <button type="button" class="btn btn-ghost" onclick="toggleChangelog('clip')">
+            📝 查看 v1.1.8 更新日志
+          </button>
+          <div class="changelog-box" id="clip-changelog">
+### 体验与稳定性优化
+- 消除系统密码授权弹窗：升级本地安全加密存储方案，彻底消除 macOS 下启动或登录时可能出现的系统锁屏密码授权弹窗，使用更加静默顺畅。
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: VloamDB -->
+      <div class="product-card" id="card-db">
+        <div>
+          <div class="card-header">
+            <div class="product-info">
+              <div class="product-icon icon-db">🗄️</div>
+              <div class="product-titles">
+                <h2>VloamDB <span class="version-tag" id="db-ver">v3.5.1</span></h2>
+                <div class="tagline">现代高效跨平台数据库管理工作台</div>
+              </div>
+            </div>
+          </div>
+          <p class="product-desc">
+            直观、敏捷、极速响应。专为现代研发流程设计，支持多数据库引擎、智能 SQL 补全、高效表结构设计与海量数据毫秒级导出。
+          </p>
+          <div class="features-list">
+            <span class="feature-chip">🚀 多引擎数据库支持</span>
+            <span class="feature-chip">📊 直观可视化管理</span>
+            <span class="feature-chip">⚡️ 毫秒级性能</span>
+            <span class="feature-chip">🛠️ 极客体验</span>
+          </div>
+        </div>
+
+        <div class="actions-group">
+          <div class="btn-row">
+            <a href="https://ghfast.top/https://github.com/wuqiyin/releases/releases/download/db-v3.5.1/VloamDB-3.5.1.dmg" class="btn btn-primary" id="db-mac-btn">
+              🍏 macOS 下载 (.dmg)
+            </a>
+            <a href="https://ghfast.top/https://github.com/wuqiyin/releases/releases/download/db-v3.5.1/VloamDB-3.5.1-amd64-installer.exe" class="btn btn-secondary" id="db-win-btn">
+              🪟 Windows (.exe)
+            </a>
+          </div>
+          <button type="button" class="btn btn-ghost" onclick="toggleChangelog('db')">
+            📝 查看最新更新日志
+          </button>
+          <div class="changelog-box" id="db-changelog">
+### 性能与体验优化
+- 提升海量数据查询渲染速度与内存占用
+- 增强连接稳定性与事务提交安全
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="https://clip.vloam.com">VloamClip 官网</a>
+        <span>·</span>
+        <a href="https://db.vloam.com">VloamDB 官网</a>
+        <span>·</span>
+        <a href="https://github.com/wuqiyin/releases">GitHub Releases 仓库</a>
+      </div>
+      <p>© 2026 Vloam. All rights reserved. 托管于全球 CDN 边缘节点 · 0 隐私追踪 · 纯净直链下载</p>
+    </div>
+  </footer>
+
+  <script>
+    // 动态同步最新版本号与直链
+    async function loadVersionManifests() {
+      // 1. 同步 VloamClip
+      try {
+        const res = await fetch('./clip/version.json?_t=' + Date.now());
+        if (res.ok) {
+          const data = await res.json();
+          if (data.version) {
+            document.getElementById('clip-ver').textContent = 'v' + data.version;
+          }
+          if (data.downloads?.darwin) {
+            document.getElementById('clip-mac-btn').href = data.downloads.darwin;
+          }
+          if (data.downloads?.windows) {
+            document.getElementById('clip-win-btn').href = data.downloads.windows;
+          }
+          if (data.changelog) {
+            document.getElementById('clip-changelog').textContent = data.changelog;
+          }
+        }
+      } catch (e) {
+        console.warn('Clip version manifest fallback:', e);
+      }
+
+      // 2. 同步 VloamDB
+      try {
+        const res = await fetch('./db/version.json?_t=' + Date.now());
+        if (res.ok) {
+          const data = await res.json();
+          if (data.version) {
+            document.getElementById('db-ver').textContent = 'v' + data.version;
+          }
+          if (data.downloads?.darwin) {
+            document.getElementById('db-mac-btn').href = data.downloads.darwin;
+          }
+          if (data.downloads?.windows) {
+            document.getElementById('db-win-btn').href = data.downloads.windows;
+          }
+          if (data.changelog) {
+            document.getElementById('db-changelog').textContent = data.changelog;
+          }
+        }
+      } catch (e) {
+        console.warn('DB version manifest fallback:', e);
+      }
+    }
+
+    function toggleChangelog(id) {
+      const el = document.getElementById(id + '-changelog');
+      if (el) {
+        el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+      }
+    }
+
+    loadVersionManifests();
+  </script>
+</body>
+</html>
