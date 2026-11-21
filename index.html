@@ -3,9 +3,92 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vloam Release Hub | Vloam 官方下载中心</title>
-  <meta name="description" content="Official release and download hub for Vloam desktop applications (VloamClip, VloamDB). Direct CDN downloads, 100% free and automated.">
+
+  <!-- Primary SEO Meta Tags -->
+  <title id="meta-title">Vloam 官方下载中心 | Vloam Release Hub</title>
+  <meta name="title" id="meta-title-tag" content="Vloam 官方下载中心 | Vloam Release Hub">
+  <meta name="description" id="meta-desc" content="Vloam 官方软件发布与下载中心，提供 VloamClip 剪贴板利器、VloamDB 数据库管理工具等全套现代化跨平台桌面应用的最新版本与高速直链下载。">
+  <meta name="keywords" content="Vloam, VloamClip, VloamDB, 剪贴板, 剪切板管理, 剪贴板利器, 全键盘流, Vim剪贴板, 数据库管理工具, 跨平台客户端, macOS下载, Windows下载, clipboard manager, database client, desktop app, free download">
+  <meta name="author" content="Vloam">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#090d16">
+
+  <!-- Canonical & Alternate Hreflangs -->
+  <link rel="canonical" href="https://dl.vloam.com/">
+  <link rel="alternate" hreflang="zh-CN" href="https://dl.vloam.com/?lang=zh">
+  <link rel="alternate" hreflang="en" href="https://dl.vloam.com/?lang=en">
+  <link rel="alternate" hreflang="x-default" href="https://dl.vloam.com/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dl.vloam.com/">
+  <meta property="og:site_name" content="Vloam Release Hub">
+  <meta property="og:title" id="og-title" content="Vloam 官方下载中心 | Vloam Release Hub">
+  <meta property="og:description" id="og-desc" content="Vloam 官方软件发布与下载中心，提供 VloamClip 剪贴板利器、VloamDB 数据库管理工具等全套现代化跨平台桌面应用的最新版本与高速直链下载。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://dl.vloam.com/">
+  <meta name="twitter:title" id="twitter-title" content="Vloam Release Hub | Vloam 官方下载中心">
+  <meta name="twitter:description" id="twitter-desc" content="Official release and download hub for Vloam desktop applications (VloamClip, VloamDB). Direct CDN downloads.">
+
+  <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230f172a'/><path d='M30 70 L50 25 L70 70 Z' fill='%2338bdf8'/></svg>">
+
+  <!-- JSON-LD Structured Data for Google Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://dl.vloam.com/#website",
+        "url": "https://dl.vloam.com/",
+        "name": "Vloam Release Hub",
+        "description": "Official download and release portal for Vloam desktop applications.",
+        "inLanguage": ["zh-CN", "en"]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://vloam.com/#organization",
+        "name": "Vloam",
+        "url": "https://vloam.com",
+        "logo": "https://dl.vloam.com/favicon.svg"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "VloamClip",
+        "operatingSystem": "macOS 10.15+, Windows 10/11, Linux",
+        "applicationCategory": "UtilitiesApplication",
+        "description": "Keyboard-driven cross-platform clipboard manager with Vim roaming, sequential FIFO/LIFO paste queue, and local-first AES-256 encrypted vault.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "url": "https://clip.vloam.com",
+        "downloadUrl": "https://dl.vloam.com"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "VloamDB",
+        "operatingSystem": "macOS 10.15+, Windows 10/11, Linux",
+        "applicationCategory": "DeveloperApplication",
+        "description": "Modern and lightweight cross-platform database management workspace with multi-engine support, intelligent SQL autocompletion, and instant export.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "url": "https://db.vloam.com",
+        "downloadUrl": "https://dl.vloam.com"
+      }
+    ]
+  }
+  </script>
+
   <style>
     :root {
       --bg: #090d16;
@@ -441,22 +524,22 @@
   <!-- Navigation -->
   <header>
     <div class="container nav-wrapper">
-      <a href="https://dl.vloam.com" class="brand">
-        <div class="brand-logo">V</div>
+      <a href="https://dl.vloam.com" class="brand" aria-label="Vloam Home">
+        <div class="brand-logo" aria-hidden="true">V</div>
         <span class="brand-title">Vloam</span>
-        <span class="brand-tag" id="i18n-brand-tag">Download Hub</span>
+        <span class="brand-tag" id="i18n-brand-tag">下载中心</span>
       </a>
       <div class="nav-right">
-        <div class="nav-links">
-          <a href="https://clip.vloam.com" class="nav-link" id="i18n-link-clip" target="_blank">VloamClip 官网</a>
-          <a href="https://db.vloam.com" class="nav-link" id="i18n-link-db" target="_blank">VloamDB 官网</a>
-          <a href="https://github.com/wuqiyin/releases" class="nav-btn nav-link" target="_blank">
-            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        <nav class="nav-links" aria-label="Main Navigation">
+          <a href="https://clip.vloam.com" class="nav-link" id="i18n-link-clip" target="_blank" rel="noopener">VloamClip 官网</a>
+          <a href="https://db.vloam.com" class="nav-link" id="i18n-link-db" target="_blank" rel="noopener">VloamDB 官网</a>
+          <a href="https://github.com/wuqiyin/releases" class="nav-btn nav-link" target="_blank" rel="noopener" aria-label="GitHub Repository">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
             <span id="i18n-link-github">GitHub 仓库</span>
           </a>
-        </div>
+        </nav>
         <!-- Language Switcher -->
-        <div class="lang-toggle">
+        <div class="lang-toggle" role="group" aria-label="Language selection">
           <button type="button" class="lang-btn active" id="btn-lang-zh" onclick="switchLanguage('zh')">中</button>
           <button type="button" class="lang-btn" id="btn-lang-en" onclick="switchLanguage('en')">EN</button>
         </div>
@@ -468,7 +551,7 @@
   <section class="hero">
     <div class="container">
       <div class="hero-badge">
-        <span class="pulse"></span>
+        <span class="pulse" aria-hidden="true"></span>
         <span id="i18n-hero-badge">官方极速直链 · 持续自动构建</span>
       </div>
       <h1 id="i18n-hero-title">Vloam 官方软件发布中心</h1>
@@ -481,18 +564,20 @@
     <div class="products-grid">
 
       <!-- Card 1: VloamClip -->
-      <div class="product-card" id="card-clip">
+      <article class="product-card" id="card-clip" itemscope itemtype="https://schema.org/SoftwareApplication">
+        <meta itemprop="applicationCategory" content="UtilitiesApplication">
+        <meta itemprop="operatingSystem" content="macOS 10.15+, Windows 10/11, Linux">
         <div>
           <div class="card-header">
             <div class="product-info">
-              <div class="product-icon icon-clip">📋</div>
+              <div class="product-icon icon-clip" aria-hidden="true">📋</div>
               <div class="product-titles">
-                <h2>VloamClip <span class="version-tag" id="clip-ver">v1.1.8</span></h2>
+                <h2 itemprop="name">VloamClip <span class="version-tag" id="clip-ver" itemprop="softwareVersion">v1.1.8</span></h2>
                 <div class="tagline" id="i18n-clip-tagline">手不离键盘的极速剪贴板利器</div>
               </div>
             </div>
           </div>
-          <p class="product-desc" id="i18n-clip-desc">
+          <p class="product-desc" id="i18n-clip-desc" itemprop="description">
             拒绝鼠标频繁打断！支持全键盘流漫游、Vim 级浏览、FIFO/LIFO 连续粘贴队列与本地纯净 AES-256 安全加密，守护击键心流。
           </p>
           <div class="features-list" id="clip-features">
@@ -505,7 +590,7 @@
 
         <div class="actions-group">
           <div class="btn-row">
-            <a href="https://ghfast.top/https://github.com/wuqiyin/releases/releases/download/clip-v1.1.8/VloamClip-1.1.8.dmg" class="btn btn-primary" id="clip-mac-btn">
+            <a href="https://ghfast.top/https://github.com/wuqiyin/releases/releases/download/clip-v1.1.8/VloamClip-1.1.8.dmg" class="btn btn-primary" id="clip-mac-btn" itemprop="downloadUrl">
               🍏 macOS 下载 (.dmg)
             </a>
             <a href="https://ghfast.top/https://github.com/wuqiyin/releases/releases/download/clip-v1.1.8/VloamClip-1.1.8-amd64-installer.exe" class="btn btn-secondary" id="clip-win-btn">
@@ -520,21 +605,23 @@
 - 消除系统密码授权弹窗：升级本地安全加密存储方案，彻底消除 macOS 下启动或登录时可能出现的系统锁屏密码授权弹窗，使用更加静默顺畅。
           </div>
         </div>
-      </div>
+      </article>
 
       <!-- Card 2: VloamDB -->
-      <div class="product-card" id="card-db">
+      <article class="product-card" id="card-db" itemscope itemtype="https://schema.org/SoftwareApplication">
+        <meta itemprop="applicationCategory" content="DeveloperApplication">
+        <meta itemprop="operatingSystem" content="macOS 10.15+, Windows 10/11, Linux">
         <div>
           <div class="card-header">
             <div class="product-info">
-              <div class="product-icon icon-db">🗄️</div>
+              <div class="product-icon icon-db" aria-hidden="true">🗄️</div>
               <div class="product-titles">
-                <h2>VloamDB <span class="version-tag" id="db-ver">v3.5.1</span></h2>
+                <h2 itemprop="name">VloamDB <span class="version-tag" id="db-ver" itemprop="softwareVersion">v3.5.1</span></h2>
                 <div class="tagline" id="i18n-db-tagline">现代高效跨平台数据库管理工作台</div>
               </div>
             </div>
           </div>
-          <p class="product-desc" id="i18n-db-desc">
+          <p class="product-desc" id="i18n-db-desc" itemprop="description">
             直观、敏捷、极速响应。专为现代研发流程设计，支持多数据库引擎、智能 SQL 补全、高效表结构设计与海量数据毫秒级导出。
           </p>
           <div class="features-list" id="db-features">
@@ -547,7 +634,7 @@
 
         <div class="actions-group">
           <div class="btn-row">
-            <a href="https://ghfast.top/https://github.com/wuqiyin/releases/releases/download/db-v3.5.1/VloamDB-3.5.1.dmg" class="btn btn-primary" id="db-mac-btn">
+            <a href="https://ghfast.top/https://github.com/wuqiyin/releases/releases/download/db-v3.5.1/VloamDB-3.5.1.dmg" class="btn btn-primary" id="db-mac-btn" itemprop="downloadUrl">
               🍏 macOS 下载 (.dmg)
             </a>
             <a href="https://ghfast.top/https://github.com/wuqiyin/releases/releases/download/db-v3.5.1/VloamDB-3.5.1-amd64-installer.exe" class="btn btn-secondary" id="db-win-btn">
@@ -563,7 +650,7 @@
 - 输入框原生预测与自动补全防护：全局输入属性补全 autoComplete="off"，避免历史表单记忆干扰。
           </div>
         </div>
-      </div>
+      </article>
 
     </div>
   </main>
@@ -585,6 +672,9 @@
   <script>
     const I18N = {
       zh: {
+        pageTitle: 'Vloam 官方下载中心 | Vloam Release Hub',
+        metaDesc: 'Vloam 官方软件发布与下载中心，提供 VloamClip 剪贴板利器、VloamDB 数据库管理工具等全套现代化跨平台桌面应用的最新版本与高速直链下载。',
+        ogDesc: '现代化跨平台桌面应用矩阵官方直链下载：VloamClip（全键盘剪贴板神器）与 VloamDB（现代数据库管理工具）。',
         brandTag: '下载中心',
         linkClip: 'VloamClip 官网',
         linkDb: 'VloamDB 官网',
@@ -613,6 +703,9 @@
         footerCopy: '© 2026 Vloam. All rights reserved. 托管于全球 CDN 边缘节点 · 0 隐私追踪 · 纯净直链下载'
       },
       en: {
+        pageTitle: 'Vloam Release Hub | Official Downloads',
+        metaDesc: 'Official release and download hub for Vloam desktop applications (VloamClip, VloamDB). Direct high-speed CDN downloads, 100% free and automated.',
+        ogDesc: 'Official software release hub for Vloam desktop suite: VloamClip (keyboard-driven clipboard manager) and VloamDB (modern database management workspace).',
         brandTag: 'Release Hub',
         linkClip: 'VloamClip Website',
         linkDb: 'VloamDB Website',
@@ -651,6 +744,16 @@
       document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
 
       const t = I18N[lang] || I18N.zh;
+
+      // Update Page Title and Meta for SEO
+      document.title = t.pageTitle;
+      const metaDescEl = document.getElementById('meta-desc');
+      if (metaDescEl) metaDescEl.setAttribute('content', t.metaDesc);
+      const ogDescEl = document.getElementById('og-desc');
+      if (ogDescEl) ogDescEl.setAttribute('content', t.ogDesc);
+      const twDescEl = document.getElementById('twitter-desc');
+      if (twDescEl) twDescEl.setAttribute('content', t.ogDesc);
+
       document.getElementById('i18n-brand-tag').textContent = t.brandTag;
       document.getElementById('i18n-link-clip').textContent = t.linkClip;
       document.getElementById('i18n-link-db').textContent = t.linkDb;
@@ -695,7 +798,11 @@
       // Update active changelogs
       renderChangelogs();
 
+      // Sync URL query without page reload
       try {
+        const url = new URL(window.location);
+        url.searchParams.set('lang', lang);
+        window.history.replaceState({}, '', url);
         localStorage.setItem('vloam_releases_lang', lang);
       } catch (e) {}
     }
@@ -773,16 +880,30 @@
 
     // Initialize Language
     (function init() {
-      let saved = null;
+      let selected = null;
+      // 1. Check URL query param ?lang=en or ?lang=zh (for search engine crawlers & direct links)
       try {
-        saved = localStorage.getItem('vloam_releases_lang');
+        const params = new URLSearchParams(window.location.search);
+        const qLang = params.get('lang');
+        if (qLang === 'en' || qLang === 'zh') {
+          selected = qLang;
+        }
       } catch (e) {}
 
-      if (!saved) {
-        const sys = (navigator.language || '').toLowerCase();
-        saved = sys.startsWith('zh') ? 'zh' : 'en';
+      // 2. Check localStorage
+      if (!selected) {
+        try {
+          selected = localStorage.getItem('vloam_releases_lang');
+        } catch (e) {}
       }
-      applyLanguage(saved);
+
+      // 3. Fallback to browser navigator language
+      if (!selected) {
+        const sys = (navigator.language || '').toLowerCase();
+        selected = sys.startsWith('zh') ? 'zh' : 'en';
+      }
+
+      applyLanguage(selected);
       loadVersionManifests();
     })();
   </script>
