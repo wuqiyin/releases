@@ -1,0 +1,17 @@
+{
+  "version": "1.1.8",
+  "tag": "v1.1.8",
+  "release_tag": "clip-v1.1.8",
+  "published_at": "2026-11-21T14:02:26Z",
+  "changelog": "### 体验与稳定性优化\n- **消除系统密码授权弹窗**：升级本地安全加密存储方案，彻底消除 macOS 下启动或登录时可能出现的系统锁屏密码授权弹窗，使用更加静默顺畅。",
+  "changelogs": {
+    "en-US": "### Improvements & Fixes\n- **Eliminate System Password Prompts**: Upgraded to a secure local encrypted vault for credentials, completely removing unexpected macOS system password authorization prompts for a seamless experience.",
+    "zh-CN": "### 体验与稳定性优化\n- **消除系统密码授权弹窗**：升级本地安全加密存储方案，彻底消除 macOS 下启动或登录时可能出现的系统锁屏密码授权弹窗，使用更加静默顺畅。"
+  },
+  "downloads": {
+    "darwin": "https://ghfast.top/https://github.com/wuqiyin/releases/releases/download/clip-v1.1.8/VloamClip-1.1.8.dmg",
+    "windows": "https://ghfast.top/https://github.com/wuqiyin/releases/releases/download/clip-v1.1.8/VloamClip-1.1.8-amd64-installer.exe",
+    "darwin_direct": "https://github.com/wuqiyin/releases/releases/download/clip-v1.1.8/VloamClip-1.1.8.dmg",
+    "windows_direct": "https://github.com/wuqiyin/releases/releases/download/clip-v1.1.8/VloamClip-1.1.8-amd64-installer.exe"
+  }
+}
