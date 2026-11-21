@@ -1,70 +1,79 @@
 # Vloam Releases Hub
 
 <p align="center">
-  <b>Vloam 官方应用矩阵公共分发与更新中心</b><br>
-  Official release and distribution hub for Vloam cross-platform desktop products.
+  <b>Official Release & Distribution Hub for the Vloam Desktop Application Suite</b><br>
+  Vloam 官方应用矩阵公共分发与更新中心
 </p>
 
 <p align="center">
-  <a href="https://dl.vloam.com"><img src="https://img.shields.io/badge/Download_Hub-dl.vloam.com-0284c7?style=flat-square&logo=googlechrome&logoColor=white" alt="Download Portal"></a>
+  <a href="https://dl.vloam.com"><img src="https://img.shields.io/badge/Download_Portal-dl.vloam.com-0284c7?style=flat-square&logo=googlechrome&logoColor=white" alt="Download Portal"></a>
   <img src="https://img.shields.io/badge/Platform-macOS%20%7C%20Windows%20%7C%20Linux-1e293b?style=flat-square" alt="Platform">
   <img src="https://img.shields.io/badge/License-Proprietary-818cf8?style=flat-square" alt="License">
 </p>
 
----
-
-本仓库是 **Vloam** 软件矩阵的官方发布载体。所有产品的最新安装包（`.dmg`、`.exe`）与版本更新元数据（`version.json`）均通过自动化 CI 流水线在此归档与分发。
-
-访问在线下载门户：**[https://dl.vloam.com](https://dl.vloam.com)**
+<p align="center">
+  <b>English</b> | <a href="./README.zh-CN.md">简体中文</a> | <a href="https://dl.vloam.com">Online Download Portal (dl.vloam.com)</a>
+</p>
 
 ---
 
-## 📦 产品矩阵与极速下载
+This repository serves as the official distribution and update center for all desktop applications under the **Vloam** ecosystem. All production installers (`.dmg`, `.exe`) and automated version manifests (`version.json`) are continuously deployed here via automated CI/CD pipelines.
+
+👉 **Visit the Online Download Portal: [https://dl.vloam.com](https://dl.vloam.com)**
+
+---
+
+## 📦 Products & Fast Direct Downloads
 
 ### 1. 📋 VloamClip
-> **手不离键盘的极速跨平台剪贴板利器**
-> 专为程序员与效率探索者打造。全键盘流穿梭漫游、Vim 级浏览、FIFO/LIFO 连续粘贴队列与本地纯净 AES-256 安全加密，守护击键心流。
+> **Keyboard-driven cross-platform clipboard manager designed for peak focus**  
+> Built for developers, writers, and productivity power-users. Features full keyboard roaming, Vim-style navigation (`j`/`k`), sequential FIFO/LIFO paste queue, and local-first AES-256-GCM encrypted security.
 
-- **官方网站**：[https://clip.vloam.com](https://clip.vloam.com)
-- **最新版本**：`v1.1.8`
-- **版本配置**：[`clip/version.json`](./clip/version.json)
-- **下载通道**：
-  - 🍏 [macOS 下载 (Universal .dmg)](https://ghfast.top/https://github.com/wuqiyin/releases/releases/download/clip-v1.1.8/VloamClip-1.1.8.dmg) · *(原始直链: [GitHub](https://github.com/wuqiyin/releases/releases/download/clip-v1.1.8/VloamClip-1.1.8.dmg))*
-  - 🪟 [Windows 下载 (NSIS .exe)](https://ghfast.top/https://github.com/wuqiyin/releases/releases/download/clip-v1.1.8/VloamClip-1.1.8-amd64-installer.exe) · *(原始直链: [GitHub](https://github.com/wuqiyin/releases/releases/download/clip-v1.1.8/VloamClip-1.1.8-amd64-installer.exe))*
+- **Official Website**: [https://clip.vloam.com](https://clip.vloam.com)
+- **Version Manifest**: [`clip/version.json`](./clip/version.json)
+- **Direct Downloads**:
+  - 🍏 **macOS (Universal .dmg)**:  
+    [Fast CDN Mirror (Global/CN)](https://ghfast.top/https://github.com/wuqiyin/releases/releases/download/clip-v1.1.8/VloamClip-1.1.8.dmg) · *[GitHub Direct](https://github.com/wuqiyin/releases/releases/download/clip-v1.1.8/VloamClip-1.1.8.dmg)*
+  - 🪟 **Windows (NSIS .exe)**:  
+    [Fast CDN Mirror (Global/CN)](https://ghfast.top/https://github.com/wuqiyin/releases/releases/download/clip-v1.1.8/VloamClip-1.1.8-amd64-installer.exe) · *[GitHub Direct](https://github.com/wuqiyin/releases/releases/download/clip-v1.1.8/VloamClip-1.1.8-amd64-installer.exe)*
 
 ---
 
 ### 2. 🗄️ VloamDB
-> **现代高效跨平台数据库开发与管理工作台**
-> 直观、敏捷、极速响应。专为现代研发流程设计，支持多数据库引擎、智能 SQL 补全、可视化表结构设计与海量数据毫秒级导出。
+> **Modern, agile cross-platform database management workspace**  
+> Intuitive, lightweight, and lightning-fast. Designed for modern engineering workflows with multi-engine support, intelligent SQL completion, visual schema designer, and sub-millisecond data exports.
 
-- **官方网站**：[https://db.vloam.com](https://db.vloam.com)
-- **版本配置**：`db/version.json`
-- **下载通道**：
-  - 🍏 [macOS 下载 (.dmg)](https://github.com/wuqiyin/releases/releases?q=db-)
-  - 🪟 [Windows 下载 (.exe)](https://github.com/wuqiyin/releases/releases?q=db-)
+- **Official Website**: [https://db.vloam.com](https://db.vloam.com)
+- **Version Manifest**: [`db/version.json`](./db/version.json)
+- **Direct Downloads**:
+  - 🍏 **macOS (.dmg)**:  
+    [Fast CDN Mirror (Global/CN)](https://ghfast.top/https://github.com/wuqiyin/releases/releases/download/db-v3.5.1/VloamDB-3.5.1.dmg) · *[GitHub Direct](https://github.com/wuqiyin/releases/releases/download/db-v3.5.1/VloamDB-3.5.1.dmg)*
+  - 🪟 **Windows (.exe)**:  
+    [Fast CDN Mirror (Global/CN)](https://ghfast.top/https://github.com/wuqiyin/releases/releases/download/db-v3.5.1/VloamDB-3.5.1-amd64-installer.exe) · *[GitHub Direct](https://github.com/wuqiyin/releases/releases/download/db-v3.5.1/VloamDB-3.5.1-amd64-installer.exe)*
 
 ---
 
-## 🌐 目录结构说明
+## 🌐 Repository Architecture
 
 ```text
 .
-├── CNAME                  # 绑定 dl.vloam.com 域名
-├── .nojekyll              # 禁用 Jekyll 保证静态资源直出
-├── index.html             # dl.vloam.com 在线下载中心首页
+├── CNAME                  # Custom domain binding for dl.vloam.com
+├── .nojekyll              # Bypasses Jekyll for raw static asset delivery
+├── index.html             # Responsive online download center with auto-sync
+├── README.md              # English documentation
+├── README.zh-CN.md        # 简体中文说明文档
 ├── clip/
-│   └── version.json       # VloamClip 客户端检测更新索引
+│   └── version.json       # Auto-update manifest for VloamClip
 └── db/
-    └── version.json       # VloamDB 客户端检测更新索引
+    └── version.json       # Auto-update manifest for VloamDB
 ```
 
 ---
 
-## 🔒 隐私与安全性
+## 🔒 Security & Privacy
 
-- **100% 官方原版构建**：所有 Releases 附件均由 GitHub Actions 官方运行器编译与打包，无任何人工二次篡改。
-- **本地优先原则**：Vloam 旗下应用均贯彻 Local-First 理念，敏感数据（剪贴板内容、数据库密码）仅在本机安全加密保存，严禁任何形式的私自上云。
+- **100% Genuine CI Artifacts**: Every released binary is automatically built and packaged inside GitHub Actions virtual machines from source code, free from manual tampering.
+- **Strict Local-First Philosophy**: All Vloam applications follow a strict Local-First architecture. Sensitive user data (such as clipboard history and database credentials) is encrypted exclusively on your local device and is never uploaded to any cloud server.
 
 ---
 

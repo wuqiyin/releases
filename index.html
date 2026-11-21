@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vloam 官方下载中心 | Vloam Release Hub</title>
-  <meta name="description" content="Vloam 官方软件发布与下载中心，提供 VloamClip、VloamDB 等全套跨平台桌面端应用的最新版本与高速直链下载。">
+  <title>Vloam Release Hub | Vloam 官方下载中心</title>
+  <meta name="description" content="Official release and download hub for Vloam desktop applications (VloamClip, VloamDB). Direct CDN downloads, 100% free and automated.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230f172a'/><path d='M30 70 L50 25 L70 70 Z' fill='%2338bdf8'/></svg>">
   <style>
     :root {
@@ -75,13 +75,13 @@
 
     /* Header */
     header {
-      padding: 28px 0;
+      padding: 22px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(12px);
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(9, 13, 22, 0.75);
+      background: rgba(9, 13, 22, 0.8);
     }
     .nav-wrapper {
       display: flex;
@@ -120,9 +120,14 @@
       color: var(--text-muted);
       margin-left: 4px;
     }
+    .nav-right {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
     .nav-links {
       display: flex;
-      gap: 20px;
+      gap: 18px;
       align-items: center;
     }
     .nav-link {
@@ -136,7 +141,7 @@
       color: #fff;
     }
     .nav-btn {
-      padding: 6px 14px;
+      padding: 6px 12px;
       border-radius: 8px;
       background: rgba(255, 255, 255, 0.06);
       border: 1px solid rgba(255, 255, 255, 0.1);
@@ -144,14 +149,42 @@
       display: flex;
       align-items: center;
       gap: 6px;
+      font-size: 13px;
     }
     .nav-btn:hover {
       background: rgba(255, 255, 255, 0.12);
     }
 
+    /* Language Switcher */
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 2px;
+      gap: 2px;
+    }
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .lang-btn.active {
+      background: #0284c7;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.4);
+    }
+
     /* Hero */
     .hero {
-      padding: 72px 0 48px;
+      padding: 64px 0 44px;
       text-align: center;
     }
     .hero-badge {
@@ -180,7 +213,7 @@
       50% { opacity: 0.4; transform: scale(0.85); }
     }
     .hero h1 {
-      font-size: 44px;
+      font-size: 42px;
       font-weight: 800;
       letter-spacing: -1px;
       margin-bottom: 16px;
@@ -191,7 +224,7 @@
     .hero p {
       font-size: 17px;
       color: var(--text-muted);
-      max-width: 620px;
+      max-width: 660px;
       margin: 0 auto;
     }
 
@@ -207,7 +240,10 @@
         grid-template-columns: 1fr;
       }
       .hero h1 {
-        font-size: 32px;
+        font-size: 30px;
+      }
+      .nav-links {
+        display: none;
       }
     }
 
@@ -285,6 +321,7 @@
       font-size: 14px;
       line-height: 1.65;
       margin-bottom: 24px;
+      min-height: 48px;
     }
 
     /* Features List */
@@ -366,7 +403,7 @@
       border-radius: 10px;
       font-size: 12px;
       color: #94a3b8;
-      max-height: 140px;
+      max-height: 150px;
       overflow-y: auto;
       white-space: pre-wrap;
       font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -407,15 +444,22 @@
       <a href="https://dl.vloam.com" class="brand">
         <div class="brand-logo">V</div>
         <span class="brand-title">Vloam</span>
-        <span class="brand-tag">Download Hub</span>
+        <span class="brand-tag" id="i18n-brand-tag">Download Hub</span>
       </a>
-      <div class="nav-links">
-        <a href="https://clip.vloam.com" class="nav-link" target="_blank">VloamClip 官网</a>
-        <a href="https://db.vloam.com" class="nav-link" target="_blank">VloamDB 官网</a>
-        <a href="https://github.com/wuqiyin/releases" class="nav-btn nav-link" target="_blank">
-          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          GitHub 归档
-        </a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="https://clip.vloam.com" class="nav-link" id="i18n-link-clip" target="_blank">VloamClip 官网</a>
+          <a href="https://db.vloam.com" class="nav-link" id="i18n-link-db" target="_blank">VloamDB 官网</a>
+          <a href="https://github.com/wuqiyin/releases" class="nav-btn nav-link" target="_blank">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <span id="i18n-link-github">GitHub 仓库</span>
+          </a>
+        </div>
+        <!-- Language Switcher -->
+        <div class="lang-toggle">
+          <button type="button" class="lang-btn active" id="btn-lang-zh" onclick="switchLanguage('zh')">中</button>
+          <button type="button" class="lang-btn" id="btn-lang-en" onclick="switchLanguage('en')">EN</button>
+        </div>
       </div>
     </div>
   </header>
@@ -425,10 +469,10 @@
     <div class="container">
       <div class="hero-badge">
         <span class="pulse"></span>
-        官方极速直链 · 持续自动构建
+        <span id="i18n-hero-badge">官方极速直链 · 持续自动构建</span>
       </div>
-      <h1>Vloam 官方软件发布中心</h1>
-      <p>为程序员、独立开发者与效率探索者打造的现代化跨平台桌面应用矩阵。</p>
+      <h1 id="i18n-hero-title">Vloam 官方软件发布中心</h1>
+      <p id="i18n-hero-desc">为程序员、独立开发者与效率探索者打造的现代化跨平台桌面应用矩阵。</p>
     </div>
   </section>
 
@@ -444,18 +488,18 @@
               <div class="product-icon icon-clip">📋</div>
               <div class="product-titles">
                 <h2>VloamClip <span class="version-tag" id="clip-ver">v1.1.8</span></h2>
-                <div class="tagline">手不离键盘的极速剪贴板利器</div>
+                <div class="tagline" id="i18n-clip-tagline">手不离键盘的极速剪贴板利器</div>
               </div>
             </div>
           </div>
-          <p class="product-desc">
+          <p class="product-desc" id="i18n-clip-desc">
             拒绝鼠标频繁打断！支持全键盘流漫游、Vim 级浏览、FIFO/LIFO 连续粘贴队列与本地纯净 AES-256 安全加密，守护击键心流。
           </p>
-          <div class="features-list">
-            <span class="feature-chip">⚡️ 全键盘 Vim 漫游</span>
-            <span class="feature-chip">📥 连续队列粘贴</span>
-            <span class="feature-chip">🔒 本地优先隐私</span>
-            <span class="feature-chip">🪶 Go + Wails 轻量级</span>
+          <div class="features-list" id="clip-features">
+            <span class="feature-chip" id="i18n-clip-f1">⚡️ 全键盘 Vim 漫游</span>
+            <span class="feature-chip" id="i18n-clip-f2">📥 连续队列粘贴</span>
+            <span class="feature-chip" id="i18n-clip-f3">🔒 本地优先隐私</span>
+            <span class="feature-chip" id="i18n-clip-f4">🪶 Go + Wails 轻量级</span>
           </div>
         </div>
 
@@ -468,8 +512,8 @@
               🪟 Windows (.exe)
             </a>
           </div>
-          <button type="button" class="btn btn-ghost" onclick="toggleChangelog('clip')">
-            📝 查看 v1.1.8 更新日志
+          <button type="button" class="btn btn-ghost" id="clip-log-toggle" onclick="toggleChangelog('clip')">
+            📝 查看更新日志
           </button>
           <div class="changelog-box" id="clip-changelog">
 ### 体验与稳定性优化
@@ -486,18 +530,18 @@
               <div class="product-icon icon-db">🗄️</div>
               <div class="product-titles">
                 <h2>VloamDB <span class="version-tag" id="db-ver">v3.5.1</span></h2>
-                <div class="tagline">现代高效跨平台数据库管理工作台</div>
+                <div class="tagline" id="i18n-db-tagline">现代高效跨平台数据库管理工作台</div>
               </div>
             </div>
           </div>
-          <p class="product-desc">
+          <p class="product-desc" id="i18n-db-desc">
             直观、敏捷、极速响应。专为现代研发流程设计，支持多数据库引擎、智能 SQL 补全、高效表结构设计与海量数据毫秒级导出。
           </p>
-          <div class="features-list">
-            <span class="feature-chip">🚀 多引擎数据库支持</span>
-            <span class="feature-chip">📊 直观可视化管理</span>
-            <span class="feature-chip">⚡️ 毫秒级性能</span>
-            <span class="feature-chip">🛠️ 极客体验</span>
+          <div class="features-list" id="db-features">
+            <span class="feature-chip" id="i18n-db-f1">🚀 多引擎数据库支持</span>
+            <span class="feature-chip" id="i18n-db-f2">📊 直观可视化管理</span>
+            <span class="feature-chip" id="i18n-db-f3">⚡️ 毫秒级性能</span>
+            <span class="feature-chip" id="i18n-db-f4">🛠️ 极客体验</span>
           </div>
         </div>
 
@@ -510,13 +554,13 @@
               🪟 Windows (.exe)
             </a>
           </div>
-          <button type="button" class="btn btn-ghost" onclick="toggleChangelog('db')">
-            📝 查看最新更新日志
+          <button type="button" class="btn btn-ghost" id="db-log-toggle" onclick="toggleChangelog('db')">
+            📝 查看更新日志
           </button>
           <div class="changelog-box" id="db-changelog">
-### 性能与体验优化
-- 提升海量数据查询渲染速度与内存占用
-- 增强连接稳定性与事务提交安全
+### 功能与优化
+- 状态栏执行状态指示器优化：修复 SQL 执行中绿色状态圆点在左边缘被裁切变扁的问题。
+- 输入框原生预测与自动补全防护：全局输入属性补全 autoComplete="off"，避免历史表单记忆干扰。
           </div>
         </div>
       </div>
@@ -528,62 +572,196 @@
   <footer>
     <div class="container">
       <div class="footer-links">
-        <a href="https://clip.vloam.com">VloamClip 官网</a>
+        <a href="https://clip.vloam.com" id="i18n-footer-clip">VloamClip 官网</a>
         <span>·</span>
-        <a href="https://db.vloam.com">VloamDB 官网</a>
+        <a href="https://db.vloam.com" id="i18n-footer-db">VloamDB 官网</a>
         <span>·</span>
-        <a href="https://github.com/wuqiyin/releases">GitHub Releases 仓库</a>
+        <a href="https://github.com/wuqiyin/releases" id="i18n-footer-github">GitHub Releases 仓库</a>
       </div>
-      <p>© 2026 Vloam. All rights reserved. 托管于全球 CDN 边缘节点 · 0 隐私追踪 · 纯净直链下载</p>
+      <p id="i18n-footer-copy">© 2026 Vloam. All rights reserved. 托管于全球 CDN 边缘节点 · 0 隐私追踪 · 纯净直链下载</p>
     </div>
   </footer>
 
   <script>
-    // 动态同步最新版本号与直链
+    const I18N = {
+      zh: {
+        brandTag: '下载中心',
+        linkClip: 'VloamClip 官网',
+        linkDb: 'VloamDB 官网',
+        linkGithub: 'GitHub 仓库',
+        heroBadge: '官方极速直链 · 持续自动构建',
+        heroTitle: 'Vloam 官方软件发布中心',
+        heroDesc: '为程序员、独立开发者与效率探索者打造的现代化跨平台桌面应用矩阵。',
+        clipTagline: '手不离键盘的极速剪贴板利器',
+        clipDesc: '拒绝鼠标频繁打断！支持全键盘流漫游、Vim 级浏览、FIFO/LIFO 连续粘贴队列与本地纯净 AES-256 安全加密，守护击键心流。',
+        clipF1: '⚡️ 全键盘 Vim 漫游',
+        clipF2: '📥 连续队列粘贴',
+        clipF3: '🔒 本地优先隐私',
+        clipF4: '🪶 Go + Wails 轻量级',
+        dbTagline: '现代高效跨平台数据库管理工作台',
+        dbDesc: '直观、敏捷、极速响应。专为现代研发流程设计，支持多数据库引擎、智能 SQL 补全、高效表结构设计与海量数据毫秒级导出。',
+        dbF1: '🚀 多引擎数据库支持',
+        dbF2: '📊 直观可视化管理',
+        dbF3: '⚡️ 毫秒级性能',
+        dbF4: '🛠️ 极客体验',
+        macBtn: '🍏 macOS 下载 (.dmg)',
+        winBtn: '🪟 Windows (.exe)',
+        logToggle: '📝 查看更新日志',
+        footerClip: 'VloamClip 官网',
+        footerDb: 'VloamDB 官网',
+        footerGithub: 'GitHub Releases 仓库',
+        footerCopy: '© 2026 Vloam. All rights reserved. 托管于全球 CDN 边缘节点 · 0 隐私追踪 · 纯净直链下载'
+      },
+      en: {
+        brandTag: 'Release Hub',
+        linkClip: 'VloamClip Website',
+        linkDb: 'VloamDB Website',
+        linkGithub: 'GitHub Repo',
+        heroBadge: 'Official Direct Links · Automated CI Delivery',
+        heroTitle: 'Vloam Software Release Hub',
+        heroDesc: 'Modern cross-platform desktop applications built for developers, indie hackers, and productivity power-users.',
+        clipTagline: 'Keyboard-driven clipboard manager for peak focus',
+        clipDesc: 'Never break your typing flow. Full keyboard navigation, Vim-style browsing (j/k), FIFO/LIFO paste queue, and local-first AES-256 encrypted security.',
+        clipF1: '⚡️ Vim & Keyboard Flow',
+        clipF2: '📥 Sequential Paste Queue',
+        clipF3: '🔒 Local-First Privacy',
+        clipF4: '🪶 Lightweight Go + Wails',
+        dbTagline: 'Modern & lightweight database management workspace',
+        dbDesc: 'Intuitive, agile, and lightning fast. Designed for modern dev workflows with multi-engine support, smart SQL completion, visual schema designer, and instant data export.',
+        dbF1: '🚀 Multi-Engine Database',
+        dbF2: '📊 Visual Schema Manager',
+        dbF3: '⚡️ Sub-millisecond Speed',
+        dbF4: '🛠️ Geek-Centric UX',
+        macBtn: '🍏 macOS Download (.dmg)',
+        winBtn: '🪟 Windows (.exe)',
+        logToggle: '📝 View Release Notes',
+        footerClip: 'VloamClip Site',
+        footerDb: 'VloamDB Site',
+        footerGithub: 'GitHub Releases',
+        footerCopy: '© 2026 Vloam. All rights reserved. Hosted on global CDN edge · Zero tracking · Pure direct downloads'
+      }
+    };
+
+    let currentLang = 'zh';
+    let clipManifest = null;
+    let dbManifest = null;
+
+    function applyLanguage(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+
+      const t = I18N[lang] || I18N.zh;
+      document.getElementById('i18n-brand-tag').textContent = t.brandTag;
+      document.getElementById('i18n-link-clip').textContent = t.linkClip;
+      document.getElementById('i18n-link-db').textContent = t.linkDb;
+      document.getElementById('i18n-link-github').textContent = t.linkGithub;
+
+      document.getElementById('i18n-hero-badge').textContent = t.heroBadge;
+      document.getElementById('i18n-hero-title').textContent = t.heroTitle;
+      document.getElementById('i18n-hero-desc').textContent = t.heroDesc;
+
+      // VloamClip
+      document.getElementById('i18n-clip-tagline').textContent = t.clipTagline;
+      document.getElementById('i18n-clip-desc').textContent = t.clipDesc;
+      document.getElementById('i18n-clip-f1').textContent = t.clipF1;
+      document.getElementById('i18n-clip-f2').textContent = t.clipF2;
+      document.getElementById('i18n-clip-f3').textContent = t.clipF3;
+      document.getElementById('i18n-clip-f4').textContent = t.clipF4;
+      document.getElementById('clip-mac-btn').textContent = t.macBtn;
+      document.getElementById('clip-win-btn').textContent = t.winBtn;
+      document.getElementById('clip-log-toggle').textContent = t.logToggle;
+
+      // VloamDB
+      document.getElementById('i18n-db-tagline').textContent = t.dbTagline;
+      document.getElementById('i18n-db-desc').textContent = t.dbDesc;
+      document.getElementById('i18n-db-f1').textContent = t.dbF1;
+      document.getElementById('i18n-db-f2').textContent = t.dbF2;
+      document.getElementById('i18n-db-f3').textContent = t.dbF3;
+      document.getElementById('i18n-db-f4').textContent = t.dbF4;
+      document.getElementById('db-mac-btn').textContent = t.macBtn;
+      document.getElementById('db-win-btn').textContent = t.winBtn;
+      document.getElementById('db-log-toggle').textContent = t.logToggle;
+
+      // Footer
+      document.getElementById('i18n-footer-clip').textContent = t.footerClip;
+      document.getElementById('i18n-footer-db').textContent = t.footerDb;
+      document.getElementById('i18n-footer-github').textContent = t.footerGithub;
+      document.getElementById('i18n-footer-copy').textContent = t.footerCopy;
+
+      // Switch button styles
+      document.getElementById('btn-lang-zh').classList.toggle('active', lang === 'zh');
+      document.getElementById('btn-lang-en').classList.toggle('active', lang === 'en');
+
+      // Update active changelogs
+      renderChangelogs();
+
+      try {
+        localStorage.setItem('vloam_releases_lang', lang);
+      } catch (e) {}
+    }
+
+    function switchLanguage(lang) {
+      applyLanguage(lang);
+    }
+
+    function renderChangelogs() {
+      // Clip changelog
+      if (clipManifest) {
+        const langKey = currentLang === 'zh' ? 'zh-CN' : 'en-US';
+        const log = clipManifest.changelogs?.[langKey] || clipManifest.changelogs?.['en'] || clipManifest.changelog;
+        if (log) {
+          document.getElementById('clip-changelog').textContent = log;
+        }
+      }
+      // DB changelog
+      if (dbManifest) {
+        const langKey = currentLang === 'zh' ? 'zh-CN' : 'en-US';
+        const log = dbManifest.changelogs?.[langKey] || dbManifest.changelogs?.['en'] || dbManifest.changelog;
+        if (log) {
+          document.getElementById('db-changelog').textContent = log;
+        }
+      }
+    }
+
+    // Dynamic Manifest loader
     async function loadVersionManifests() {
-      // 1. 同步 VloamClip
       try {
         const res = await fetch('./clip/version.json?_t=' + Date.now());
         if (res.ok) {
-          const data = await res.json();
-          if (data.version) {
-            document.getElementById('clip-ver').textContent = 'v' + data.version;
+          clipManifest = await res.json();
+          if (clipManifest.version) {
+            document.getElementById('clip-ver').textContent = 'v' + clipManifest.version;
           }
-          if (data.downloads?.darwin) {
-            document.getElementById('clip-mac-btn').href = data.downloads.darwin;
+          if (clipManifest.downloads?.darwin) {
+            document.getElementById('clip-mac-btn').href = clipManifest.downloads.darwin;
           }
-          if (data.downloads?.windows) {
-            document.getElementById('clip-win-btn').href = data.downloads.windows;
-          }
-          if (data.changelog) {
-            document.getElementById('clip-changelog').textContent = data.changelog;
+          if (clipManifest.downloads?.windows) {
+            document.getElementById('clip-win-btn').href = clipManifest.downloads.windows;
           }
         }
       } catch (e) {
-        console.warn('Clip version manifest fallback:', e);
+        console.warn('Clip manifest error:', e);
       }
 
-      // 2. 同步 VloamDB
       try {
         const res = await fetch('./db/version.json?_t=' + Date.now());
         if (res.ok) {
-          const data = await res.json();
-          if (data.version) {
-            document.getElementById('db-ver').textContent = 'v' + data.version;
+          dbManifest = await res.json();
+          if (dbManifest.version) {
+            document.getElementById('db-ver').textContent = 'v' + dbManifest.version;
           }
-          if (data.downloads?.darwin) {
-            document.getElementById('db-mac-btn').href = data.downloads.darwin;
+          if (dbManifest.downloads?.darwin) {
+            document.getElementById('db-mac-btn').href = dbManifest.downloads.darwin;
           }
-          if (data.downloads?.windows) {
-            document.getElementById('db-win-btn').href = data.downloads.windows;
-          }
-          if (data.changelog) {
-            document.getElementById('db-changelog').textContent = data.changelog;
+          if (dbManifest.downloads?.windows) {
+            document.getElementById('db-win-btn').href = dbManifest.downloads.windows;
           }
         }
       } catch (e) {
-        console.warn('DB version manifest fallback:', e);
+        console.warn('DB manifest error:', e);
       }
+
+      renderChangelogs();
     }
 
     function toggleChangelog(id) {
@@ -593,7 +771,20 @@
       }
     }
 
-    loadVersionManifests();
+    // Initialize Language
+    (function init() {
+      let saved = null;
+      try {
+        saved = localStorage.getItem('vloam_releases_lang');
+      } catch (e) {}
+
+      if (!saved) {
+        const sys = (navigator.language || '').toLowerCase();
+        saved = sys.startsWith('zh') ? 'zh' : 'en';
+      }
+      applyLanguage(saved);
+      loadVersionManifests();
+    })();
   </script>
 </body>
 </html>
