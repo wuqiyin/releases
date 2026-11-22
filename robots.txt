@@ -1,5 +1,10 @@
 User-agent: *
 Allow: /
 
+# LLM & AI Search context endpoints (GEO)
+# Standards: https://llmstxt.org
+# llms.txt: https://dl.vloam.com/llms.txt
+# llms-full.txt: https://dl.vloam.com/llms-full.txt
+
 # Sitemap
 Sitemap: https://dl.vloam.com/sitemap.xml

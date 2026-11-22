@@ -1,0 +1,66 @@
+# Vloam Release Portal - Complete System & Product Reference
+
+## Overview
+Vloam produces modern, lightweight, high-performance desktop productivity software built with Go and modern web frontend architectures (Wails framework).
+
+Official Portal: https://dl.vloam.com
+GitHub Repository: https://github.com/wuqiyin/releases
+
+---
+
+## 1. VloamClip (Clipboard Manager)
+
+### What is VloamClip?
+VloamClip is a keyboard-driven, privacy-focused cross-platform clipboard manager crafted for developers, creators, and power users on macOS and Windows.
+
+### Core Capabilities
+- **Vim Roaming Navigation**: Full keyboard navigation support (H/J/K/L, hotkeys, search-to-paste) eliminating mouse dependence.
+- **Sequential Paste Queue**: Supports FIFO (First-In-First-Out) and LIFO batch pasting for seamless data transfer workflows.
+- **Privacy & Local Vault**: Local-first architecture with optional AES-256 encryption. Clipboard history never leaves the local machine.
+- **Multi-Format History**: Handles plain text, rich text, code snippets with auto syntax detection, images, hex colors, and file references.
+- **Instant Search**: Blazing fast fuzzy search across tens of thousands of history items without lag.
+
+### Supported Platforms
+- macOS: Apple Silicon (arm64, M1/M2/M3/M4) and Intel (x86_64), macOS 10.15 or later.
+- Windows: Windows 10 and Windows 11 (x64).
+
+### Distribution Endpoints
+- Web Portal: https://dl.vloam.com/#clip
+- Version Manifest: https://dl.vloam.com/clip/version.json
+- Pricing: Free to download and use.
+
+---
+
+## 2. VloamDB (Database Client)
+
+### What is VloamDB?
+VloamDB is a lightweight, responsive desktop database GUI client that provides developers with an instant-launch, distraction-free environment for inspecting and querying databases.
+
+### Core Capabilities
+- **Multi-Engine Support**: Native connectivity for MySQL, PostgreSQL, SQLite, and Redis.
+- **Smart Query Editor**: Intelligent SQL auto-completion, format beautification, multi-tab execution, and performance timing.
+- **Visual Schema Browser**: Interactive tree for tables, columns, indexes, foreign keys, and views.
+- **Quick Data Export**: One-click export to CSV, JSON, and standard SQL dump files.
+- **Ultra-lightweight Resource Usage**: Sub-second startup time and low memory footprint compared to Electron-based clients.
+
+### Supported Platforms
+- macOS: Apple Silicon (arm64) and Intel (x86_64), macOS 10.15 or later.
+- Windows: Windows 10 and Windows 11 (x64).
+
+### Distribution Endpoints
+- Web Portal: https://dl.vloam.com/#db
+- Version Manifest: https://dl.vloam.com/db/version.json
+- Pricing: Free to download and use.
+
+---
+
+## Frequently Asked Questions (FAQ)
+
+### Q: Are Vloam applications open-source or free?
+A: Binaries and releases are freely available via the official release hub (https://dl.vloam.com). They can be downloaded and used without subscription fees.
+
+### Q: Does VloamClip upload my sensitive clipboard content to the cloud?
+A: No. VloamClip is strictly local-first. All data is stored in a local SQLite database with optional AES-256 encryption.
+
+### Q: How do automatic updates work?
+A: Applications check https://dl.vloam.com/<app>/version.json upon launch or via manual check, with automated domestic and global CDN fallback mirrors.

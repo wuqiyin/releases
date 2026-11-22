@@ -18,6 +18,7 @@
   <link rel="alternate" hreflang="zh-CN" href="https://dl.vloam.com/?lang=zh">
   <link rel="alternate" hreflang="en" href="https://dl.vloam.com/?lang=en">
   <link rel="alternate" hreflang="x-default" href="https://dl.vloam.com/">
+  <link rel="alternate" type="text/markdown" href="https://dl.vloam.com/llms.txt" title="LLM Context">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -84,6 +85,44 @@
         },
         "url": "https://db.vloam.com",
         "downloadUrl": "https://dl.vloam.com"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://dl.vloam.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is VloamClip?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "VloamClip is a keyboard-driven clipboard manager for macOS and Windows featuring Vim roaming navigation, sequential paste queue (FIFO/LIFO), and local-first AES-256 encrypted storage."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What databases does VloamDB support?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "VloamDB supports MySQL, PostgreSQL, SQLite, and Redis with smart SQL autocompletion and lightweight native desktop performance."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are Vloam applications free to download?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, release binaries are available for direct download completely free of charge at https://dl.vloam.com."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does VloamClip compromise user privacy or upload clipboard history?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. VloamClip is strictly local-first. Clipboard history never leaves your device and can be locked with local AES-256 encryption."
+            }
+          }
+        ]
       }
     ]
   }
@@ -664,6 +703,8 @@
         <a href="https://db.vloam.com" id="i18n-footer-db">VloamDB 官网</a>
         <span>·</span>
         <a href="https://github.com/wuqiyin/releases" id="i18n-footer-github">GitHub Releases 仓库</a>
+        <span>·</span>
+        <a href="https://dl.vloam.com/llms.txt" target="_blank" rel="noopener" title="LLM Context for AI Search">LLMs.txt</a>
       </div>
       <p id="i18n-footer-copy">© 2026 Vloam. All rights reserved. 托管于全球 CDN 边缘节点 · 0 隐私追踪 · 纯净直链下载</p>
     </div>

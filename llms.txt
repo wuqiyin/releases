@@ -1,0 +1,12 @@
+# Vloam Downloads
+
+> Official software release portal and version manifests for Vloam desktop applications (VloamClip and VloamDB).
+
+## Products
+
+- [VloamClip](https://dl.vloam.com/#clip): Modern keyboard-driven cross-platform clipboard manager for macOS and Windows. Features Vim roaming mode, sequential paste queue (FIFO/LIFO), local-first AES-256 encryption, and rich format support (text, images, files, code snippets).
+- [VloamDB](https://dl.vloam.com/#db): Lightweight, fast modern database GUI client for macOS and Windows. Supports MySQL, PostgreSQL, SQLite, and Redis with intuitive schema browsing and query execution.
+
+## Details & Full Context
+
+- [Full Specifications](https://dl.vloam.com/llms-full.txt): Complete product architectures, feature lists, supported platforms, changelog APIs, and download endpoints.
