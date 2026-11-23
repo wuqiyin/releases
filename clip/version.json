@@ -2,7 +2,7 @@
   "version": "1.1.9",
   "tag": "v1.1.9",
   "release_tag": "clip-v1.1.9",
-  "published_at": "2026-11-23T14:21:15Z",
+  "published_at": "2026-11-23T15:13:41Z",
   "changelog": "### 新增功能 & 交互优化\n- **多关键词空格组合搜索**：支持在搜索框输入以空格分隔的多个关键词（AND 关系），中英文精准组合检索；同时支持多关键词独立高亮展示与匹配位置智能居中摘要。\n- **长按空格预览体验优化**：优化键盘浏览剪贴板条目时的长按空格快速预览交互，避免在搜索框处于输入状态时误触发，兼顾平滑预览与流畅文字输入。\n\n### 稳定性修复\n- **macOS 托盘菜单闪退修复**：修复在 macOS 状态栏右键点击应用图标时，右键上下文菜单偶发闪退、瞬间消失的问题。",
   "changelogs": {
     "en-US": "### Features & UX Improvements\n- **Multi-Keyword Search with Space Separation**: Support searching with space-separated multiple keywords (AND logic) across all languages, with independent keyword highlighting and auto-centered snippet preview.\n- **Quick Look Spacebar Preview Refinement**: Refined the hold-to-preview Spacebar interaction when browsing clipboard history, ensuring spaces can be typed seamlessly when typing in the search bar.\n\n### Stability Fixes\n- **macOS Tray Context Menu Instant Dismissal**: Fixed an issue on macOS where right-clicking the status bar icon caused the context menu to flicker and dismiss immediately.",
