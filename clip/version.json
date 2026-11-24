@@ -1,17 +1,17 @@
 {
-  "version": "1.1.9",
-  "tag": "v1.1.9",
-  "release_tag": "clip-v1.1.9",
-  "published_at": "2026-11-23T15:13:41Z",
-  "changelog": "### 新增功能 & 交互优化\n- **多关键词空格组合搜索**：支持在搜索框输入以空格分隔的多个关键词（AND 关系），中英文精准组合检索；同时支持多关键词独立高亮展示与匹配位置智能居中摘要。\n- **长按空格预览体验优化**：优化键盘浏览剪贴板条目时的长按空格快速预览交互，避免在搜索框处于输入状态时误触发，兼顾平滑预览与流畅文字输入。\n\n### 稳定性修复\n- **macOS 托盘菜单闪退修复**：修复在 macOS 状态栏右键点击应用图标时，右键上下文菜单偶发闪退、瞬间消失的问题。",
+  "version": "1.1.10",
+  "tag": "v1.1.10",
+  "release_tag": "clip-v1.1.10",
+  "published_at": "2026-11-24T14:57:24Z",
+  "changelog": "### 预览与交互优化\n- **长内容预览可滚动**：按住空格时，可将鼠标移到预览框内使用滚轮或触控板阅读长文本；加宽阅读区域，改善字号与留白，并保留松开空格关闭的操作。\n- **预览与选中项保持一致**：修复预览显示旧记录、快速松开空格后预览仍出现的问题，统一历史、常用和队列中的搜索输入与空格预览行为。\n\n### 数据与稳定性修复\n- **保留原始文本格式**：复制、保存和导入时保留首尾空格、缩进与换行。\n- **历史记录备份更可靠**：支持导入导出更大的备份文件（上限 256 MiB），修复常用条目导出、时间保留和导入失败时的数据一致性问题。\n- **队列与搜索修复**：改善连续粘贴及失败恢复时的队列顺序、容量与去重检查，修复搜索分页和同一秒内记录的排序问题。\n- **设置与账号存储优化**：修复快速修改多项设置时的保存覆盖、忽略更新版本不及时生效等问题；macOS 登录凭据迁移到系统钥匙串，存储失败时提供明确提示和重试入口。",
   "changelogs": {
-    "en-US": "### Features & UX Improvements\n- **Multi-Keyword Search with Space Separation**: Support searching with space-separated multiple keywords (AND logic) across all languages, with independent keyword highlighting and auto-centered snippet preview.\n- **Quick Look Spacebar Preview Refinement**: Refined the hold-to-preview Spacebar interaction when browsing clipboard history, ensuring spaces can be typed seamlessly when typing in the search bar.\n\n### Stability Fixes\n- **macOS Tray Context Menu Instant Dismissal**: Fixed an issue on macOS where right-clicking the status bar icon caused the context menu to flicker and dismiss immediately.",
-    "zh-CN": "### 新增功能 & 交互优化\n- **多关键词空格组合搜索**：支持在搜索框输入以空格分隔的多个关键词（AND 关系），中英文精准组合检索；同时支持多关键词独立高亮展示与匹配位置智能居中摘要。\n- **长按空格预览体验优化**：优化键盘浏览剪贴板条目时的长按空格快速预览交互，避免在搜索框处于输入状态时误触发，兼顾平滑预览与流畅文字输入。\n\n### 稳定性修复\n- **macOS 托盘菜单闪退修复**：修复在 macOS 状态栏右键点击应用图标时，右键上下文菜单偶发闪退、瞬间消失的问题。"
+    "en-US": "### Preview & Interaction Improvements\n- **Scrollable Long-Text Previews**: Hold Space and move the pointer over the preview to scroll with a mouse wheel or trackpad. A wider reading area, larger text and more padding improve readability. Release Space to close.\n- **Preview the Selected Item Reliably**: Fixed stale-item previews and previews appearing after Space was released. Made search input and Space previews consistent across History, Pinned and Queue.\n\n### Data & Stability Fixes\n- **Preserve Original Formatting**: Keep leading and trailing whitespace, indentation and line breaks when capturing, saving and importing text.\n- **More Reliable History Backups**: Support larger backup files up to 256 MiB. Fixed pinned-item exports, timestamp preservation and import consistency when an operation fails.\n- **Queue & Search Fixes**: Improved queue ordering, capacity checks and duplicate handling during consecutive pastes and failure recovery. Fixed search pagination and ordering of entries captured within the same second.\n- **Settings & Credential Storage**: Fixed overlapping settings saves and delayed application of ignored-update preferences. macOS credentials now migrate to the system Keychain, with clear errors and a retry option when storage fails.",
+    "zh-CN": "### 预览与交互优化\n- **长内容预览可滚动**：按住空格时，可将鼠标移到预览框内使用滚轮或触控板阅读长文本；加宽阅读区域，改善字号与留白，并保留松开空格关闭的操作。\n- **预览与选中项保持一致**：修复预览显示旧记录、快速松开空格后预览仍出现的问题，统一历史、常用和队列中的搜索输入与空格预览行为。\n\n### 数据与稳定性修复\n- **保留原始文本格式**：复制、保存和导入时保留首尾空格、缩进与换行。\n- **历史记录备份更可靠**：支持导入导出更大的备份文件（上限 256 MiB），修复常用条目导出、时间保留和导入失败时的数据一致性问题。\n- **队列与搜索修复**：改善连续粘贴及失败恢复时的队列顺序、容量与去重检查，修复搜索分页和同一秒内记录的排序问题。\n- **设置与账号存储优化**：修复快速修改多项设置时的保存覆盖、忽略更新版本不及时生效等问题；macOS 登录凭据迁移到系统钥匙串，存储失败时提供明确提示和重试入口。"
   },
   "downloads": {
-    "darwin": "https://ghfast.top/https://github.com/wuqiyin/releases/releases/download/clip-v1.1.9/VloamClip-1.1.9.dmg",
-    "windows": "https://ghfast.top/https://github.com/wuqiyin/releases/releases/download/clip-v1.1.9/VloamClip-1.1.9-amd64-installer.exe",
-    "darwin_direct": "https://github.com/wuqiyin/releases/releases/download/clip-v1.1.9/VloamClip-1.1.9.dmg",
-    "windows_direct": "https://github.com/wuqiyin/releases/releases/download/clip-v1.1.9/VloamClip-1.1.9-amd64-installer.exe"
+    "darwin": "https://ghfast.top/https://github.com/wuqiyin/releases/releases/download/clip-v1.1.10/VloamClip-1.1.10.dmg",
+    "windows": "https://ghfast.top/https://github.com/wuqiyin/releases/releases/download/clip-v1.1.10/VloamClip-1.1.10-amd64-installer.exe",
+    "darwin_direct": "https://github.com/wuqiyin/releases/releases/download/clip-v1.1.10/VloamClip-1.1.10.dmg",
+    "windows_direct": "https://github.com/wuqiyin/releases/releases/download/clip-v1.1.10/VloamClip-1.1.10-amd64-installer.exe"
   }
 }
