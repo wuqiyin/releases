@@ -1,17 +1,17 @@
 {
-  "version": "1.1.10",
-  "tag": "v1.1.10",
-  "release_tag": "clip-v1.1.10",
-  "published_at": "2026-11-24T14:57:24Z",
-  "changelog": "### 预览与交互优化\n- **长内容预览可滚动**：按住空格时，可将鼠标移到预览框内使用滚轮或触控板阅读长文本；加宽阅读区域，改善字号与留白，并保留松开空格关闭的操作。\n- **预览与选中项保持一致**：修复预览显示旧记录、快速松开空格后预览仍出现的问题，统一历史、常用和队列中的搜索输入与空格预览行为。\n\n### 数据与稳定性修复\n- **保留原始文本格式**：复制、保存和导入时保留首尾空格、缩进与换行。\n- **历史记录备份更可靠**：支持导入导出更大的备份文件（上限 256 MiB），修复常用条目导出、时间保留和导入失败时的数据一致性问题。\n- **队列与搜索修复**：改善连续粘贴及失败恢复时的队列顺序、容量与去重检查，修复搜索分页和同一秒内记录的排序问题。\n- **设置与账号存储优化**：修复快速修改多项设置时的保存覆盖、忽略更新版本不及时生效等问题；macOS 登录凭据迁移到系统钥匙串，存储失败时提供明确提示和重试入口。",
+  "version": "1.1.11",
+  "tag": "v1.1.11",
+  "release_tag": "clip-v1.1.11",
+  "published_at": "2026-11-27T15:07:23Z",
+  "changelog": "### 邮箱离线激活\n- **无需联网或设备码**：收到授权邮件后，粘贴授权码即可离线激活；授权按邮箱归属，可在多台电脑使用，保留原有账号登录方式。\n- **离线模式不自动联网**：停止自动账号校验、更新检查和用量事件上报；仍可主动登录账号或手动检查更新。\n- **授权状态同步**：激活、替换或移除授权后同步主界面与设置页，修复交叉操作时按钮一直处于处理中的问题；过期授权不能继续用于队列输出。\n\n### 购买与键盘交互\n- **未登录也可查看付款信息**：主界面与设置「账号」页直接提供购买入口，未登录用户显示对应提示。\n- **搜索与选中状态一致**：打开主界面只聚焦搜索框，不默认高亮第一条；按方向键进入列表后再选中，返回搜索框时清除选中，历史、常用和队列行为一致。\n- **保留搜索框原生编辑快捷键**：修复删除文字、选择文字等操作被列表快捷键拦截的问题，保留列表导航和空格预览。",
   "changelogs": {
-    "en-US": "### Preview & Interaction Improvements\n- **Scrollable Long-Text Previews**: Hold Space and move the pointer over the preview to scroll with a mouse wheel or trackpad. A wider reading area, larger text and more padding improve readability. Release Space to close.\n- **Preview the Selected Item Reliably**: Fixed stale-item previews and previews appearing after Space was released. Made search input and Space previews consistent across History, Pinned and Queue.\n\n### Data & Stability Fixes\n- **Preserve Original Formatting**: Keep leading and trailing whitespace, indentation and line breaks when capturing, saving and importing text.\n- **More Reliable History Backups**: Support larger backup files up to 256 MiB. Fixed pinned-item exports, timestamp preservation and import consistency when an operation fails.\n- **Queue & Search Fixes**: Improved queue ordering, capacity checks and duplicate handling during consecutive pastes and failure recovery. Fixed search pagination and ordering of entries captured within the same second.\n- **Settings & Credential Storage**: Fixed overlapping settings saves and delayed application of ignored-update preferences. macOS credentials now migrate to the system Keychain, with clear errors and a retry option when storage fails.",
-    "zh-CN": "### 预览与交互优化\n- **长内容预览可滚动**：按住空格时，可将鼠标移到预览框内使用滚轮或触控板阅读长文本；加宽阅读区域，改善字号与留白，并保留松开空格关闭的操作。\n- **预览与选中项保持一致**：修复预览显示旧记录、快速松开空格后预览仍出现的问题，统一历史、常用和队列中的搜索输入与空格预览行为。\n\n### 数据与稳定性修复\n- **保留原始文本格式**：复制、保存和导入时保留首尾空格、缩进与换行。\n- **历史记录备份更可靠**：支持导入导出更大的备份文件（上限 256 MiB），修复常用条目导出、时间保留和导入失败时的数据一致性问题。\n- **队列与搜索修复**：改善连续粘贴及失败恢复时的队列顺序、容量与去重检查，修复搜索分页和同一秒内记录的排序问题。\n- **设置与账号存储优化**：修复快速修改多项设置时的保存覆盖、忽略更新版本不及时生效等问题；macOS 登录凭据迁移到系统钥匙串，存储失败时提供明确提示和重试入口。"
+    "en-US": "### Email-Based Offline Activation\n- **No Connection or Device Code Required**: Paste the license code received by email to activate offline. Email licenses can be used on multiple computers, and existing account sign-in remains available.\n- **No Automatic Networking in Offline Mode**: Pause automatic account checks, update checks and usage-event reporting. Explicit sign-in and manual update checks remain available.\n- **Consistent License State**: Synchronize activation, replacement and removal across the main panel and Settings. Fix stuck busy controls during overlapping operations and prevent expired licenses from authorizing queue output.\n\n### Purchasing & Keyboard Interaction\n- **View Payment Information Before Signing In**: Show purchase entry points in the main panel and Settings → Account, with an appropriate message for signed-out users.\n- **Match Selection to Search Focus**: Opening the panel focuses search without highlighting the first item. Arrow navigation selects an item, while returning to search clears selection across History, Pinned and Queue.\n- **Respect Search Editing Shortcuts**: Stop list commands from intercepting text deletion and selection, while preserving list navigation and Space previews.",
+    "zh-CN": "### 邮箱离线激活\n- **无需联网或设备码**：收到授权邮件后，粘贴授权码即可离线激活；授权按邮箱归属，可在多台电脑使用，保留原有账号登录方式。\n- **离线模式不自动联网**：停止自动账号校验、更新检查和用量事件上报；仍可主动登录账号或手动检查更新。\n- **授权状态同步**：激活、替换或移除授权后同步主界面与设置页，修复交叉操作时按钮一直处于处理中的问题；过期授权不能继续用于队列输出。\n\n### 购买与键盘交互\n- **未登录也可查看付款信息**：主界面与设置「账号」页直接提供购买入口，未登录用户显示对应提示。\n- **搜索与选中状态一致**：打开主界面只聚焦搜索框，不默认高亮第一条；按方向键进入列表后再选中，返回搜索框时清除选中，历史、常用和队列行为一致。\n- **保留搜索框原生编辑快捷键**：修复删除文字、选择文字等操作被列表快捷键拦截的问题，保留列表导航和空格预览。"
   },
   "downloads": {
-    "darwin": "https://ghfast.top/https://github.com/wuqiyin/releases/releases/download/clip-v1.1.10/VloamClip-1.1.10.dmg",
-    "windows": "https://ghfast.top/https://github.com/wuqiyin/releases/releases/download/clip-v1.1.10/VloamClip-1.1.10-amd64-installer.exe",
-    "darwin_direct": "https://github.com/wuqiyin/releases/releases/download/clip-v1.1.10/VloamClip-1.1.10.dmg",
-    "windows_direct": "https://github.com/wuqiyin/releases/releases/download/clip-v1.1.10/VloamClip-1.1.10-amd64-installer.exe"
+    "darwin": "https://ghfast.top/https://github.com/wuqiyin/releases/releases/download/clip-v1.1.11/VloamClip-1.1.11.dmg",
+    "windows": "https://ghfast.top/https://github.com/wuqiyin/releases/releases/download/clip-v1.1.11/VloamClip-1.1.11-amd64-installer.exe",
+    "darwin_direct": "https://github.com/wuqiyin/releases/releases/download/clip-v1.1.11/VloamClip-1.1.11.dmg",
+    "windows_direct": "https://github.com/wuqiyin/releases/releases/download/clip-v1.1.11/VloamClip-1.1.11-amd64-installer.exe"
   }
 }
